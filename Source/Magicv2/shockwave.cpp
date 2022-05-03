@@ -2,20 +2,20 @@
 
 #include "AiCharacter.h"
 #include "shockwave.h"
+#include "Particles/ParticleSystem.h"
 
 // Sets default values
 Ashockwave::Ashockwave()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Scenecomp"));
 
 
 	NewCoillions = CreateDefaultSubobject<USphereComponent>(TEXT("NewCollsion"));
 	NewCoillions->SetGenerateOverlapEvents(true);
 	NewCoillions->BodyInstance.SetCollisionProfileName("Projectile");
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MESH"));
-	
 	
 }
 

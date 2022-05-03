@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/SphereComponent.h"
+
 #include "shockwave.generated.h"
 class USphereComponent;
 class UProjectileMovementComponent;
@@ -17,10 +18,13 @@ public:
 	// Sets default values for this actor's properties
 	Ashockwave();
 
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="StaicMesh")
-	UStaticMeshComponent* Mesh;
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category ="scene")
+	USceneComponent* SceneComponent;
+
 	
-	UPROPERTY(BlueprintReadWrite,VisibleAnywhere,Category="Coillions")
+
+	
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="Coillions")
 	USphereComponent* NewCoillions;
 
 

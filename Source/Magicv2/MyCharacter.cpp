@@ -5,6 +5,7 @@
 
 #include "Kismet/GameplayStatics.h"
 #include "Math/UnrealMathUtility.h"
+
 #include "MagicAttackBase.h"
 #include "shockwave.h"
 
@@ -77,7 +78,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAction("Jump",IE_Released,this,&AMyCharacter::StopJump);
 	PlayerInputComponent->BindAction("Fire",IE_Pressed,this,&AMyCharacter::Shoot);
 	PlayerInputComponent->BindAction("GroundAttack",IE_Pressed,this,&AMyCharacter::GroundAttack);
-	//PlayerInputComponent->BindAction("GroundAttack",IE_Released,this,&AMyCharacter::StopGroundAttack);
+	PlayerInputComponent->BindAction("GroundAttack",IE_Released,this,&AMyCharacter::StopGroundAttack);
 
 	
 	
@@ -115,7 +116,27 @@ void AMyCharacter::Shoot()
 	
 	
 	FireBall = World->SpawnActor<AMagicAttackBase>(ProjectileClass, BoxLocation, BoxRot);
-	FireBall->Damage += DamageBuff;
+	if (FireBall) FireBall->Damage += DamageBuff;
+	else
+	{
+		FHitResult hitRes;
+		FVector Start = GetActorLocation();
+
+		Start.Z += 50.f;
+		Start.X += 200.f;
+
+		FVector ForwardVector = GetActorForwardVector();
+		FVector End = ((ForwardVector * 50000.f) + Start);
+		FCollisionQueryParams CollisionParams;
+		ActorLineTraceSingle(hitRes, Start, End, ECC_WorldStatic, CollisionParams);
+		if (hitRes.GetActor())
+		{
+			AAiCharacter* enemy = Cast<AAiCharacter>(hitRes.GetActor());
+			if (enemy) enemy->Health -= DamageBuff;
+		}
+	}
+	
+	
 	
 }
 
@@ -179,7 +200,13 @@ void AMyCharacter::GroundAttack()
 	
 	if(Shop.HasBroughPush == true)
 	{
-		ShockWave = World->SpawnActor<Ashockwave>(TSubShockWave,BoxLocation,BoxRot);
+		if(GroundAttackCalled == false)
+		{
+			ShockWave = World->SpawnActor<Ashockwave>(TSubShockWave,BoxLocation,BoxRot);
+           
+			GetWorldTimerManager().SetTimer(ResetGroundAttack,this,&AMyCharacter::TimerCalled, 10,false);
+		}
+	
 	}
 
 	
@@ -187,6 +214,15 @@ void AMyCharacter::GroundAttack()
 
 void AMyCharacter::StopGroundAttack()
 {
+	if(GroundAttackCalled == true)
+	{
+		
+	}
+}
+
+void AMyCharacter::TimerCalled()
+{
+	GroundAttackCalled=true;
 }
 
 

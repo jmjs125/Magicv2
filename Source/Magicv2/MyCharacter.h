@@ -103,6 +103,12 @@ public:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="GroundAttack")
 	class Ashockwave* ShockWave;
 
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="attack")
+	bool GroundAttackCalled;
+
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category ="Timer")
+	FTimerHandle ResetGroundAttack;
+
 	UFUNCTION(BlueprintCallable)
 	void HealthShop();
 
@@ -119,6 +125,9 @@ public:
 	void GroundAttack();
 	UFUNCTION(BlueprintCallable)
 	void StopGroundAttack();
+	
+	UFUNCTION(BlueprintCallable)
+    void TimerCalled();
 
 
 
