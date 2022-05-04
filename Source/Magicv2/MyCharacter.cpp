@@ -78,7 +78,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAction("Jump",IE_Released,this,&AMyCharacter::StopJump);
 	PlayerInputComponent->BindAction("Fire",IE_Pressed,this,&AMyCharacter::Shoot);
 	PlayerInputComponent->BindAction("GroundAttack",IE_Pressed,this,&AMyCharacter::GroundAttack);
-	PlayerInputComponent->BindAction("GroundAttack",IE_Released,this,&AMyCharacter::StopGroundAttack);
+	//PlayerInputComponent->BindAction("GroundAttack",IE_Released,this,&AMyCharacter::StopGroundAttack);
 
 	
 	
@@ -202,9 +202,15 @@ void AMyCharacter::GroundAttack()
 	{
 		if(GroundAttackCalled == false)
 		{
+			
+			GroundAttackCalled=true;
 			ShockWave = World->SpawnActor<Ashockwave>(TSubShockWave,BoxLocation,BoxRot);
-           
-			GetWorldTimerManager().SetTimer(ResetGroundAttack,this,&AMyCharacter::TimerCalled, 10,false);
+			ShockWave->HasAttack = true;
+			
+			GetWorldTimerManager().SetTimer(ResetGroundAttack,this,&AMyCharacter::StopGroundAttack, 5
+			);
+     
+			
 		}
 	
 	}
@@ -214,16 +220,11 @@ void AMyCharacter::GroundAttack()
 
 void AMyCharacter::StopGroundAttack()
 {
-	if(GroundAttackCalled == true)
-	{
-		
-	}
+	
+ GroundAttackCalled =false;
 }
 
-void AMyCharacter::TimerCalled()
-{
-	GroundAttackCalled=true;
-}
+
 
 
 

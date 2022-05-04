@@ -126,8 +126,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StopGroundAttack();
 	
-	UFUNCTION(BlueprintCallable)
-    void TimerCalled();
+	
 
 
 

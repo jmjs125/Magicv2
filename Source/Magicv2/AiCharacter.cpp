@@ -82,11 +82,7 @@ void AAiCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 	
 		CanAttack =true;
 	}
-	if(ShockWave)
-	{
-		FVector Forward =this->GetActorForwardVector();
-		SkeletalMeshComponent->AddImpulse(Forward*Force);
-	}
+	
 }
 
 void AAiCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
