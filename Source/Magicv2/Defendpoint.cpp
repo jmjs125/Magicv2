@@ -2,7 +2,7 @@
 
 
 #include "Defendpoint.h"
-
+#include "Kismet/GameplayStatics.h"
 #include "AiCharacter.h"
 
 // Sets default values
@@ -101,6 +101,7 @@ void ADefendpoint::Damage()
     				if(Health<= 0)
     				{
     					this->Destroy();
+    					UGameplayStatics::OpenLevel(this,"MainMenu");
     				}
     			}
 }

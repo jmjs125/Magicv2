@@ -5,7 +5,6 @@
 
 #include "Kismet/GameplayStatics.h"
 #include "Math/UnrealMathUtility.h"
-
 #include "MagicAttackBase.h"
 #include "shockwave.h"
 
@@ -59,7 +58,7 @@ if(Shield >=0)
 	
 	if(Health <=0)
 	{
-		PlayersDead();
+		UGameplayStatics::OpenLevel(this,"MainMenu");
 	}
 	
 }
