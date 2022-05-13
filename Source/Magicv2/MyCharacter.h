@@ -126,9 +126,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StopGroundAttack();
 	
-	
-
-
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category="playerbeenhit");
+	bool BeenHit;
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category ="Timer")
+	FTimerHandle RegenTimer;
+	UFUNCTION(BlueprintCallable)
+	void RegenFunction();
+	UFUNCTION(BlueprintCallable)
+		void SetTimer();
 
 	UPROPERTY()
 	int32 DamageBuff=0;

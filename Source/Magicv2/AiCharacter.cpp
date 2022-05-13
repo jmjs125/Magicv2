@@ -65,6 +65,7 @@ void AAiCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 	Ashockwave* ShockWave = Cast<Ashockwave>(OtherActor);
 	if (Char)
 	{
+		Char->BeenHit =true;
 		if(Char->PlayerShield ==true)
 		{
 			CanAttack =true;
@@ -92,7 +93,12 @@ void AAiCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* Oth
 	ADefendpoint*Defendpoint =Cast<ADefendpoint>(OtherActor);
 	if(Char)
 	{
+		Char->BeenHit =false;
 		CanAttack =false;
+		if(Char->BeenHit == false)
+		{
+			Char->SetTimer();
+		}
 	}
 	if(Defendpoint)
 	{

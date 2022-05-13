@@ -60,6 +60,16 @@ if(Shield >=0)
 	{
 		UGameplayStatics::OpenLevel(this,"MainMenu");
 	}
+
+	if(Health >= MaxHealth)
+	{
+		Health = MaxHealth;
+	}
+	if(Shield >=Maxshield)
+	{
+		Shield= Maxshield;
+	}
+
 	
 }
 
@@ -221,6 +231,29 @@ void AMyCharacter::StopGroundAttack()
 {
 	
  GroundAttackCalled =false;
+}
+
+void AMyCharacter::RegenFunction()
+{
+	if(Shield <=0 && Health <=MaxHealth )
+		{
+  			Health =Health +50;
+  		}
+  		if(Shield <= Maxshield && Health == MaxHealth)
+  		{
+  			Shield = Shield +50;
+  		}
+	if(Health == MaxHealth&& Shield == Maxshield)
+		{
+		
+		GetWorldTimerManager().ClearTimer(RegenTimer);
+		}
+	
+}
+
+void AMyCharacter::SetTimer()
+{
+	GetWorldTimerManager().SetTimer(RegenTimer,this,&AMyCharacter::RegenFunction,1,true);
 }
 
 
