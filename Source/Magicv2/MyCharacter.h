@@ -137,5 +137,8 @@ public:
 
 	UPROPERTY()
 	int32 DamageBuff=0;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void CreateWidget();
 	
 };

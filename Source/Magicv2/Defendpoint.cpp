@@ -4,6 +4,7 @@
 #include "Defendpoint.h"
 #include "Kismet/GameplayStatics.h"
 #include "AiCharacter.h"
+#include "MyCharacter.h"
 
 // Sets default values
 ADefendpoint::ADefendpoint()
@@ -96,12 +97,12 @@ void ADefendpoint::Damage()
     				Shield = Shield -100;
     			}else
     			{
-    				
     				Health = Health-100;
     				if(Health<= 0)
     				{
+    					CreateWidget();
     					this->Destroy();
-    					UGameplayStatics::OpenLevel(this,"MainMenu");
+    					//UGameplayStatics::OpenLevel(this,"MainMenu");
     				}
     			}
 }

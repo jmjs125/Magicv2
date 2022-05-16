@@ -8,33 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8717610d-a163-426e-a1bc-73ecc10eacde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/UI/endScreen.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Magicv2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Magicv2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Ai/Bp_AiCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Ai/Bp_AiCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_ThunderBallHit.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_aquaStorm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_darkStorm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_explosion.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_fireBall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_fireStorm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_healAura.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_hit1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_hit2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_laser01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_lightning1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_lightning2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_lightning3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_magicCircle1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_shootingStar1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_shotSpawn.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_storm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_thunderBall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_thunderStorm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_waterBall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FXVarietyPack/Blueprints/BP_ky_waterBallHit.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/world.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/world.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Player/Bp_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/Bp_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Hud.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Hud.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/Shop/Shop.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Shop/Shop.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Magicv2/AiCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/AiCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Magicv2/AiCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/AiCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Magicv2/Defendpoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/Defendpoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Magicv2/Defendpoint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/Defendpoint.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Magicv2/MyCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/MyCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Magicv2/MyCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Magicv2/MyCharacter.h" afterDir="false" />
     </list>
@@ -194,6 +176,7 @@
       <workItem from="1651827893259" duration="2343000" />
       <workItem from="1652100479569" duration="3357000" />
       <workItem from="1652441941227" duration="3079000" />
+      <workItem from="1652702327169" duration="10154000" />
     </task>
     <servers />
   </component>

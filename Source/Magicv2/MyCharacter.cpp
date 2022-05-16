@@ -58,7 +58,8 @@ if(Shield >=0)
 	
 	if(Health <=0)
 	{
-		UGameplayStatics::OpenLevel(this,"MainMenu");
+		CreateWidget();
+		//UGameplayStatics::OpenLevel(this,"MainMenu");
 	}
 
 	if(Health >= MaxHealth)
@@ -235,19 +236,16 @@ void AMyCharacter::StopGroundAttack()
 
 void AMyCharacter::RegenFunction()
 {
-	if(Shield <=0 && Health <=MaxHealth )
-		{
-  			Health =Health +50;
-  		}
-  		if(Shield <= Maxshield && Health == MaxHealth)
+	if(Shield <= Maxshield )
   		{
-  			Shield = Shield +50;
+  			Shield = Shield +10;
   		}
-	if(Health == MaxHealth&& Shield == Maxshield)
-		{
+	if( Shield >= Maxshield)
+	{
 		
+		Shield = Maxshield;
 		GetWorldTimerManager().ClearTimer(RegenTimer);
-		}
+	}
 	
 }
 

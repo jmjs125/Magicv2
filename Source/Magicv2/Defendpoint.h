@@ -65,7 +65,9 @@ public:
 	void Regen();
 	UFUNCTION()
 	void SetTimer();
-
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void CreateWidget();
 	
 
 };
